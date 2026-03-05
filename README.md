@@ -1,52 +1,35 @@
-# Simple CRUD Application with FastAPI, Python, and MySQL
+# Simple CRUD Application
 
-This is a simple CRUD (Create, Read, Update, Delete) application using FastAPI (Python), HTML/JavaScript, and MySQL.
+A simple CRUD (Create, Read, Update, Delete) application using FastAPI, Python, and MySQL.
 
-## Setup
+## Quick Start
 
-### 1. Install Python
-Download and install Python from https://python.org (version 3.7+).
+1. **Install dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
 
-### 2. Install MySQL
-- Download and install MySQL Server from https://dev.mysql.com/downloads/mysql/
-- During installation, set up a root password (leave blank for no password, as in the code).
-- Create a database named `crud_db`:
-  - Open MySQL Command Line Client or MySQL Workbench.
-  - Run: `CREATE DATABASE crud_db;`
+2. **Setup MySQL:**
+   - Create database: `CREATE DATABASE crud_db;`
+   - Intilize the Sql Url in `database.py`
+3. **Run the server:**
+   ```
+   uvicorn main:app --reload
+   ```
 
-### 3. Install Dependencies
-In the project folder, run:
-```
-pip install -r requirements.txt
-```
+4. **Open in browser:**
+   - Open `index.html` to use the application
 
-### 4. Run the Application
-Start the FastAPI server:
-```
-uvicorn main:app --reload
-```
+## Features
 
-The API will be available at http://localhost:8000
-
-Open `index.html` in your browser to use the application.
+- Create, Read, Update, and Delete users
+- Simple HTML/JavaScript frontend
+- FastAPI backend with MySQL database
 
 ## Files
 
-- `requirements.txt`: Python dependencies
-- `database.py`: Database connection setup
-- `models.py`: SQLAlchemy models
-- `crud.py`: CRUD operations
-- `main.py`: FastAPI application
-- `index.html`: Frontend HTML with JavaScript
-
-## API Endpoints
-
-- `GET /users`: Get all users
-- `GET /users/{id}`: Get a specific user
-- `POST /users`: Create a new user
-- `PUT /users/{id}`: Update a user
-- `DELETE /users/{id}`: Delete a user
-
-## Note
-
-This is a basic implementation. In production, add proper validation, authentication, and error handling.
+- `main.py` - FastAPI application
+- `index.html` - Frontend interface
+- `database.py` - Database configuration
+- `models.py` - Database models
+- `crud.py` - CRUD operations
